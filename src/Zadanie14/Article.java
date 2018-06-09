@@ -1,5 +1,7 @@
 package Zadanie14;
 
+import Zadanie15.Order;
+
 public class Article {
     static int counter;
     int id;
@@ -23,5 +25,6 @@ public class Article {
         new Article(1, "Matma dla opornych", 69.69, "Bardzo pomocna książka");
         new Article();
         System.out.println(Article.counter);
+        new Order();
     }
 }
