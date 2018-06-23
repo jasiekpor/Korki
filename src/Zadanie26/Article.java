@@ -1,4 +1,4 @@
-package Zadanie25;
+package Zadanie26;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +33,11 @@ public /*final*/ class Article {
             throw new WrongArgumentException();
         }
         int id = Integer.parseInt(args[0]);
+
+        if (id < 0){
+            throw new BadArticleIDException();
+        }
+
         for(Article a : articles){
             if (a.id == id){
                 throw new DuplicateException();
