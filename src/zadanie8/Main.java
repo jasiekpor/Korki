@@ -3,34 +3,37 @@ package zadanie8;
 public class Main {
 
     public static void main(String[] args) {
-        wypiszTablice(args);
+        wypiszTablice(stworzTablice(parsujTablice(args)));
     }
 
-    public static void wypiszTablice(String[] args) {
-        int iloscWierszy = args.length;
-        int tab[] = new int[args.length];
-        for (int i = 0; i < args.length; i++) {
-            tab[i] = Integer.parseInt(args[i]);
+    public static int[] parsujTablice(String[] tab) {
+        int[] wynik = new int[tab.length];
+        for (int i = 0; i < tab.length; i++) {
+            wynik[i] = Integer.parseInt(tab[i]);
         }
-        int max = tab[0];
-        for (int i : tab) {
-            if (i > max) {
-                max = i;
-            }
-        }
-        String macierz[][] = new String[iloscWierszy][max];
+        return wynik;
+    }
 
-        for (int w = 0; w < iloscWierszy; w++) {
-            for (int k = 0; k < tab[w];k++){
-                macierz[w][k] = ""+w+"-"+k;
-            }
+    public static String[][] stworzTablice(int[] tab) {
+
+        String[][] wynik = new String[tab.length][];
+
+        for (int i = 0; i < tab.length; i++) {
+            wynik[i] = new String[tab[i]];
         }
 
-        for (int w = 0; w < macierz.length; w++) {
-            for (int k = 0; k < macierz[0].length;k++){
-                if (macierz[w][k] != null) {
-                    System.out.print(macierz[w][k] + "\t");
-                }
+        for (int w = 0; w < wynik.length; w++) {
+            for (int k = 0; k < wynik[w].length; k++) {
+                wynik[w][k] = w + "-" + k;
+            }
+        }
+        return wynik;
+    }
+
+    public static void wypiszTablice(String[][] tab) {
+        for (int w = 0; w < tab.length; w++) {
+            for (int k = 0; k < tab[w].length; k++) {
+                System.out.print(tab[w][k] + "\t");
             }
             System.out.println();
         }
