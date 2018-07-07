@@ -24,7 +24,7 @@ public class Main {
         }
     }
 
-    static int[] doMath(int[][] tab, char[] znaki) {
+    public static int[] doMath(int[][] tab, char[] znaki) {
         if (tab.length == 2 && tab[0].length == znaki.length) {
             int[] result = new int[tab[0].length];
             for (int c = 0; c < tab[0].length; c++) { // przechodzimy po wszystkich kolumnach
