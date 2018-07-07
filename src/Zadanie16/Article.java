@@ -7,11 +7,11 @@ public class Article {
     private double price;
     private String description;
 
-    Article(){
+    public Article(){
         counter++;
     }
 
-    Article(int id, String name, double price, String description){
+    public Article(int id, String name, double price, String description){
         this.id = id;
         this.name = name;
         this.price = price;
