@@ -3,17 +3,17 @@ package Zadanie14;
 import Zadanie15.Order;
 
 public class Article {
-    static int counter;
+    public static int counter;
     int id;
     String name;
     double price;
     String description;
 
-    Article(){
+    public Article(){
         counter++;
     }
 
-    Article(int id, String name, double price, String description){
+    public Article(int id, String name, double price, String description){
         this.id = id;
         this.name = name;
         this.price = price;
