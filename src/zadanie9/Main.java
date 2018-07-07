@@ -16,7 +16,7 @@ public class Main {
 
     }
 
-    static void showTable(int[][] tab) {
+    public static void showTable(int[][] tab) {
         for (int r = 0; r < tab.length; r++) {
             for (int c = 0; c < tab[0].length; c++) {
                 System.out.print(tab[r][c] + "\t"); // wypisz element tablicy
@@ -25,8 +25,8 @@ public class Main {
         }
     }
 
-    static void switchRowsOf(int[][] tab, int first, int second) {
-        if (first < tab.length && second < tab.length) { // sprawdzenie czy parametry są mniejsze niż wielkość tabeli "tab"
+    public static void switchRowsOf(int[][] tab, int first, int second) {
+        if (first >=0 && first < tab.length && second>=0 && second < tab.length) { // sprawdzenie czy parametry są mniejsze niż wielkość tabeli "tab"
             int temp[] = new int[tab[0].length]; // deklaracja tablicy pomocniczej
             for (int c = 0; c < tab[0].length; c++) {
                 temp[c] = tab[first][c]; // skopiowanie elementów z "first" wiersza do tablicy pomocniczej
