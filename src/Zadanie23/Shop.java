@@ -24,7 +24,7 @@ public class Shop {
         this.downloadable = downloadable;
     }
 
-    class Order{
+    public class Order{
         int[] quantities = new int[10];
         Date date;
 
@@ -39,8 +39,11 @@ public class Shop {
             this.date = date;
         }
 
-        void accept(){
+        public void accept() throws Exception {
             for (int i = 0; i < productsQuantities.length;i++){
+                if (quantities[i] > productsQuantities[i]){
+                    throw new Exception("Not enough products in store!");
+                }
                 productsQuantities[i] -= quantities[i];
             }
         }
