@@ -2,7 +2,7 @@ package Zadanie10;
 
 public class Main {
     public static void main(String[] args) {
-        int[][] tab = {{1, 2, 3, 4, 5}, {1, 2, 3, 4, 5}};
+        int[][] tab = {{1, 2, 3, 4, 5}, {1, 2, 3, 0, 5}};
         char[] znaki = {'+', '-', '*', '/', 'x'};
 
         for (int r = 0; r < tab.length; r++) {
@@ -38,6 +38,10 @@ public class Main {
                         result[c] = first * second;
                         break;
                     case '/':
+                        if (second == 0){
+                            System.out.println("Nie dziel przez 0 jełopie!");
+                            break;
+                        }
                         result[c] = first / second;
                         break;
                     default:
