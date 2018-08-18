@@ -27,7 +27,7 @@ public /*final*/ class Article {
         articles.add(this);
     }
 
-    static Article scanArticleCode(String line) throws DuplicateException {
+    public static Article scanArticleCode(String line) throws DuplicateException {
         String args[] = line.split(":");
         if (args.length != 4){
             throw new WrongArgumentException();
