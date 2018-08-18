@@ -57,10 +57,6 @@ public /*final*/ class Article {
         return counter;
     }
 
-    public static void setCounter(int counter) {
-        Article.counter = counter;
-    }
-
     public int getId() {
         return id;
     }
