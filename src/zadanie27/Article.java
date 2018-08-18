@@ -27,22 +27,16 @@ public /*final*/ class Article {
         articles.add(this);
     }
 
-    static Article scanArticleCode(String line) throws DuplicateException {
+    public static Article scanArticleCode(String line) throws WrongArgumentException {
         String args[] = line.split(":");
         if (args.length != 4){
             throw new WrongArgumentException();
         }
         int id = Integer.parseInt(args[0]);
         assert(id > 0);
-        if (id < 0){
-            throw new BadArticleIDException(id);
-        }
 
         for(Article article : articles){
             assert (article.id != id);
-            if (article.id == id){
-                throw new DuplicateException(id);
-            }
         }
         double price = Double.parseDouble(args[2]);
 
